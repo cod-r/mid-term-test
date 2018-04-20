@@ -9,24 +9,54 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.swing.plaf.FontUIResource;
 
 /**
+ * This class creates the JOptionPane needed to show the score to the user and
+ * saves the score to a file
  *
  * @author panea
  */
 public class ResultsFrame extends JFrame {
 
-    //JOptionPane.showMessageDialog(null, "Your quiz has been automatically submitted for grading.", "Out of Time", JOptionPane.OK_OPTION);
-    private JPanel mainFrame;
+    ResultsFrame(String extraMessage) {
 
-    ResultsFrame() {
-        //QuestionFrame frame = new QuestionFrame("","q1.txt","","","","");
-        mainFrame = new JPanel(new FlowLayout());
-        JLabel showScore = new JLabel("congratz " + WelcomeFrame.getName() + " your score is " + QuestionFrame.getScore());
-        mainFrame.add(showScore);
+        // Change the button size of JOptionPane
+        UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("ARIAL", Font.PLAIN, 25)));
+        // Change text size of JOptionPane
+        UIManager.put("OptionPane.messageFont", new Font("Arial", Font.PLAIN, 30));
+
+        // Save the score into a file
+        try {
+            PrintWriter writer = new PrintWriter(WelcomeFrame.getName() + "_test_result.txt", "UTF-8");
+            writer.println("Score is " + QuestionFrame.getScore());
+            writer.close();
+        } catch (IOException ex) {
+            //Error
+        }
+
+        // Using a showOptionDialog to find out when the "ok" button is clicked
+        //The showOptionDialog will return 0 if OK was clicked and -1 if the user closed the dialog.
+        int res = JOptionPane.showOptionDialog(null, extraMessage + " Click \"OK\" to see your result.",
+                "Info", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE, null, null, null);
+        if (res == 0) {
+            if (QuestionFrame.getScore() >= 8) {
+                UIManager.put("OptionPane.okButtonText", "Exit");
+                JOptionPane.showOptionDialog(null, "Congratulations " + WelcomeFrame.getName() + "!" + "\n" + "Your score is " + QuestionFrame.getScore() + " out of 15.",
+                        "Congratulations!", JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE, null, null, null);
+                System.exit(0);
+            } else {
+                UIManager.put("OptionPane.okButtonText", "Exit");
+                JOptionPane.showMessageDialog(null, WelcomeFrame.getName() + ", your score is " + QuestionFrame.getScore() + " out of 15.",
+                        "You failed the test!", JOptionPane.OK_OPTION);
+                System.exit(0);
+            }
+        }
+
     }
 
-    public JPanel getRestultsPanel() {
-        return mainFrame;
-    }
 }

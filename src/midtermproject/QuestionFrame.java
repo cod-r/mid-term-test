@@ -100,25 +100,19 @@ public class QuestionFrame extends JFrame {
                     if ("b".equals(getSelected())) {
                         QuestionFrame.addToScore(1);
                     }
-                    
+
                     QuestionFrame frame = new QuestionFrame("2.What will be the output of the program?",
                             "q2.txt", "A. ABCD", "B. Compilation fails.", "C. C is printed before exiting with an error message.",
                             "D. BC is printed before exiting with an error message.");
-                    
-                    
-                    
-                    
-                    
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
-                    
+
                     // Add the new question panel to the master frame
                     mainContainer.add(frame.getQuestionPanel());
                     //pack();
-                    
+
                 } else if (fileName == "q2.txt") {
                     // Check if the answer is correct and update the score
                     if ("c".equals(getSelected())) {
@@ -126,13 +120,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("3.What will be the output of the program?",
                             "q3.txt", "A. AB", "B. BC", "C. ABC", "D. BCD");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
-                    
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q3.txt") {
                     // Check if the answer is correct and update the score
@@ -141,11 +133,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("4. Which two are acceptable types for x? ",
                             "q4.txt", "A. 1 and 3", "B. 2 and 4", "C. 3 and 5", "D. 4 and 6");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q4.txt") {
                     // Check if the answer is correct and update the score
@@ -154,11 +146,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("5.What will be the output of the program?",
                             "q5.txt", "A. 0 1 2 ", "B. 0 1 2 1 2 2", "C. 2 1 0 1 0 0", "D. 2 1 2 0 1 2");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q5.txt") {
                     // Check if the answer is correct and update the score
@@ -167,11 +159,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("6.What will be the output of the program?",
                             "q6.txt", "A. 0 def 1 ", "B. 2 1 0 def 1 ", "C. 2 1 0 def def ", "D. 2 1 0 def 1 def 1");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q6.txt") {
                     // Check if the answer is correct and update the score
@@ -180,11 +172,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("7.What will be the output of the program?",
                             "q7.txt", "A. abcXyZ ", "B. abcxyz ", "C. xyzabc ", "D. XyZabc");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q7.txt") {
                     // Check if the answer is correct and update the score
@@ -193,11 +185,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("8.What will be the output of the program?",
                             "q8.txt", "A. Pine", "B. Tree", "C. Forest", "D. Oops");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q8.txt") {
                     // Check if the answer is correct and update the score
@@ -206,11 +198,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("9.Which three statements are true?",
                             "q9.txt", "A. 1, 2 and 3 ", "B. 2, 4 and 5 ", "C. 3, 4 and 5 ", "D. 1, 4 and 5 ");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q9.txt") {
                     // Check if the answer is correct and update the score
@@ -219,11 +211,11 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("10.Which two of the following methods are defined in class Thread?",
                             "q10.txt", "A. 1 and 4", "B. 2 and 3", "C. 3 and 4", "D. 2 and 4");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q10.txt") {
                     // Check if the answer is correct and update the score
@@ -233,31 +225,30 @@ public class QuestionFrame extends JFrame {
                     QuestionFrame frame = new QuestionFrame("11.What will be the output of the program?",
                             "q11.txt", "A. 10", "B. None of the others", "C. Compilation fails due to error on line 2",
                             "D. 20");
-                    
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
-                    
-                    
+
                     mainContainer.add(frame.getQuestionPanel());
                     frame.nextQuestion.setText("Finish Test");
-                    
-                } else if (fileName == "q11.txt"){
-                    
-                    
+
+                } else if (fileName == "q11.txt") {
+
+                    // Check if the answer is correct and update the score
                     if ("d".equals(getSelected())) {
                         QuestionFrame.addToScore(2);
                     }
-                    ResultsFrame frame = new ResultsFrame();
-                    
-                   
+
+                    // Empty string because theres no need for an extra message
+                    // Create  the JOptionPane needed to show the score to the user
+                    new ResultsFrame("");
+
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
-                    
-                    mainContainer.add(frame.getRestultsPanel());
-                    
+
+                    //mainContainer.add(frame.getRestultsPanel());
                 }
 
             }
