@@ -1,0 +1,12 @@
+switch(x)  
+{      
+	default:           
+		System.out.println("Hello");  
+}
+
+1. byte 
+2. long 
+3. char 
+4. float 
+5. Short 
+6. Long

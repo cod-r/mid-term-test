@@ -1,0 +1,10 @@
+public class Ex 
+{  
+	int x = y;  
+	static int y = 5;  
+	public static void main(String[] args) 
+	{   
+		y = 10;   
+		System.out.print(new Ex().x + y);  
+	} 
+}
