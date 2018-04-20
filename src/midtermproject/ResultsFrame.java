@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quizzproject;
+package midtermproject;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -22,7 +22,7 @@ public class ResultsFrame extends JFrame {
     ResultsFrame() {
         //QuestionFrame frame = new QuestionFrame("","q1.txt","","","","");
         mainFrame = new JPanel(new FlowLayout());
-        JLabel showScore = new JLabel("score " + QuestionFrame.getScore());
+        JLabel showScore = new JLabel("congratz " + WelcomeFrame.getName() + " your score is " + QuestionFrame.getScore());
         mainFrame.add(showScore);
     }
 

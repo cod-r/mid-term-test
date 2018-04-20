@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quizzproject;
+package midtermproject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -96,7 +96,7 @@ public class QuestionFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Create the next question depending on the current question "q1.txt"
                 if (fileName == "q1.txt") {
-                    
+                    // Check if the answer is correct and update the score
                     if ("b".equals(getSelected())) {
                         QuestionFrame.addToScore(1);
                     }
@@ -104,7 +104,7 @@ public class QuestionFrame extends JFrame {
                     QuestionFrame frame = new QuestionFrame("2.What will be the output of the program?",
                             "q2.txt", "A. ABCD", "B. Compilation fails.", "C. C is printed before exiting with an error message.",
                             "D. BC is printed before exiting with an error message.");
-                    // Check if the answer is correct and update the score
+                    
                     
                     
                     
@@ -127,10 +127,6 @@ public class QuestionFrame extends JFrame {
                     QuestionFrame frame = new QuestionFrame("3.What will be the output of the program?",
                             "q3.txt", "A. AB", "B. BC", "C. ABC", "D. BCD");
                     
-                   
-                    
-                    
-                    
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
@@ -146,9 +142,6 @@ public class QuestionFrame extends JFrame {
                     QuestionFrame frame = new QuestionFrame("4. Which two are acceptable types for x? ",
                             "q4.txt", "A. 1 and 3", "B. 2 and 4", "C. 3 and 5", "D. 4 and 6");
                     
-                    
-                    
-                    
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
@@ -161,9 +154,6 @@ public class QuestionFrame extends JFrame {
                     }
                     QuestionFrame frame = new QuestionFrame("5.What will be the output of the program?",
                             "q5.txt", "A. 0 1 2 ", "B. 0 1 2 1 2 2", "C. 2 1 0 1 0 0", "D. 2 1 2 0 1 2");
-                    
-                    
-                    
                     
                     mainContainer.removeAll();
                     mainContainer.revalidate();
@@ -254,6 +244,7 @@ public class QuestionFrame extends JFrame {
                     frame.nextQuestion.setText("Finish Test");
                     
                 } else if (fileName == "q11.txt"){
+                    
                     
                     if ("d".equals(getSelected())) {
                         QuestionFrame.addToScore(2);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quizzproject;
+package midtermproject;
 
 /**
  *
@@ -33,7 +33,7 @@ public class QuizzTimer {
                     timeLabel.setText(setTime.format(time));
                     time = time-1000;
                 }else{
-                    JOptionPane.showMessageDialog(null, "Your quiz has been automatically submitted for grading.", "Out of Time", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(null, "Click \"OK\" to see your result.", "Out of Time", JOptionPane.OK_OPTION);
                     System.exit(0);
                 }
             }   
@@ -49,6 +49,7 @@ public class QuizzTimer {
     }
 
     public void start(){
+        countDown.setInitialDelay(0);
         countDown.start();
     }
 }
