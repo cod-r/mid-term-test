@@ -19,6 +19,9 @@ import java.text.*;
  */
 public class QuestionFrame extends JFrame {
 
+    // Used for preventing the score to go up multiple times
+    private int counter = 0;
+    // Keeps the score
     private static int score = 0;
     private JPanel mainContainer;
     private JPanel changeQuestionPanel;
@@ -31,6 +34,19 @@ public class QuestionFrame extends JFrame {
     private JLabel testScore;
 
     private Font font = new Font("Seriff", Font.PLAIN, 30);
+
+    // These variables store which button is checked from every question
+    private static String q1Selection = null;
+    private static String q2Selection = null;
+    private static String q3Selection = null;
+    private static String q4Selection = null;
+    private static String q5Selection = null;
+    private static String q6Selection = null;
+    private static String q7Selection = null;
+    private static String q8Selection = null;
+    private static String q9Selection = null;
+    private static String q10Selection = null;
+    private static String q11Selection = null;
 
     QuestionFrame(String question, String fileName, String a1, String a2, String a3, String a4) {
 
@@ -89,17 +105,37 @@ public class QuestionFrame extends JFrame {
         changeQuestionPanel.add(previousQuestion);
         changeQuestionPanel.add(nextQuestion);
 
-        // Calculate the score
-        nextQuestion.addActionListener(new ActionListener() {
-
+        // When "back" button is pressed, create the apropirate QuestionFrame
+        // depending on the current question frame
+        previousQuestion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Create the next question depending on the current question "q1.txt"
-                if (fileName == "q1.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("b".equals(getSelected())) {
-                        QuestionFrame.addToScore(1);
+
+                if (fileName == "q2.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q2Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("1.What will be the output of the program?",
+                            "q1.txt", "A. Base", "B. BaseBase", "C. Compilation fails", "D. The code runs with no output ");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q1Selection != null) {
+                        frame.setSelected(q1Selection);
                     }
+
+                    // Remove the back button
+                    frame.mainContainer.remove(previousQuestion);
+                    // Add the new question panel to the master frame
+                    mainContainer.add(frame.getQuestionPanel());
+
+                } else if (fileName == "q3.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q3Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("2.What will be the output of the program?",
                             "q2.txt", "A. ABCD", "B. Compilation fails.", "C. C is printed before exiting with an error message.",
@@ -108,6 +144,183 @@ public class QuestionFrame extends JFrame {
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q2Selection != null) {
+                        frame.setSelected(q2Selection);
+                    }
+
+                    // Add the new question panel to the master frame
+                    mainContainer.add(frame.getQuestionPanel());
+
+                } else if (fileName == "q4.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q4Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("3.What will be the output of the program?",
+                            "q3.txt", "A. AB", "B. BC", "C. ABC", "D. BCD");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q3Selection != null) {
+                        frame.setSelected(q3Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+                } else if (fileName == "q5.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q5Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("4. Which two are acceptable types for x? ",
+                            "q4.txt", "A. 1 and 3", "B. 2 and 4", "C. 3 and 5", "D. 4 and 6");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q4Selection != null) {
+                        frame.setSelected(q4Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+                } else if (fileName == "q6.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q6Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("5.What will be the output of the program?",
+                            "q5.txt", "A. 0 1 2 ", "B. 0 1 2 1 2 2", "C. 2 1 0 1 0 0", "D. 2 1 2 0 1 2");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q5Selection != null) {
+                        frame.setSelected(q5Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+                } else if (fileName == "q7.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q7Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("6.What will be the output of the program?",
+                            "q6.txt", "A. 0 def 1 ", "B. 2 1 0 def 1 ", "C. 2 1 0 def def ", "D. 2 1 0 def 1 def 1");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q6Selection != null) {
+                        frame.setSelected(q6Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+                } else if (fileName == "q8.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q8Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("7.What will be the output of the program?",
+                            "q7.txt", "A. abcXyZ ", "B. abcxyz ", "C. xyzabc ", "D. XyZabc");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q7Selection != null) {
+                        frame.setSelected(q7Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+                } else if (fileName == "q9.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q9Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("8.What will be the output of the program?",
+                            "q8.txt", "A. Pine", "B. Tree", "C. Forest", "D. Oops");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q8Selection != null) {
+                        frame.setSelected(q8Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+                } else if (fileName == "q10.txt") {
+                    // Used in case the user goes to the next question without ansering the current question
+                    q10Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("9.Which three statements are true?",
+                            "q9.txt", "A. 1, 2 and 3 ", "B. 2, 4 and 5 ", "C. 3, 4 and 5 ", "D. 1, 4 and 5 ");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q9Selection != null) {
+                        frame.setSelected(q9Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+                } else if (fileName == "q11.txt") {
+
+                    // Used in case the user goes to the next question without ansering the current question
+                    q11Selection = getSelected();
+                    QuestionFrame frame = new QuestionFrame("10.Which two of the following methods are defined in class Thread?",
+                            "q10.txt", "A. 1 and 4", "B. 2 and 3", "C. 3 and 4", "D. 2 and 4");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the backquestion was already selected and if it 
+                    // was then select that button
+                    if (q10Selection != null) {
+                        frame.setSelected(q10Selection);
+                    }
+
+                    mainContainer.add(frame.getQuestionPanel());
+
+                }
+            }
+        });
+
+        // When "next" button is pressed, create the apropirate QuestionFrame
+        // depending on the current question frame
+        nextQuestion.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Create the next question depending on the current question "q1.txt"
+                if (fileName == "q1.txt") {
+                    // Check if the answer is correct and if the question was already answered then update the score
+                    if ("b".equals(getSelected()) && q1Selection == null) {
+                        QuestionFrame.addToScore(1);
+                    }
+                    // Save which radio button is selected
+                    q1Selection = getSelected();
+
+                    QuestionFrame frame = new QuestionFrame("2.What will be the output of the program?",
+                            "q2.txt", "A. ABCD", "B. Compilation fails.", "C. C is printed before exiting with an error message.",
+                            "D. BC is printed before exiting with an error message.");
+
+                    mainContainer.removeAll();
+                    mainContainer.revalidate();
+                    mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q2Selection != null) {
+                        frame.setSelected(q2Selection);
+                    }
 
                     // Add the new question panel to the master frame
                     mainContainer.add(frame.getQuestionPanel());
@@ -115,113 +328,181 @@ public class QuestionFrame extends JFrame {
 
                 } else if (fileName == "q2.txt") {
                     // Check if the answer is correct and update the score
-                    if ("c".equals(getSelected())) {
+                    if ("c".equals(getSelected()) && q2Selection == null) {
                         QuestionFrame.addToScore(1);
+
                     }
+                    // Save which radio button is selected
+                    q2Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("3.What will be the output of the program?",
                             "q3.txt", "A. AB", "B. BC", "C. ABC", "D. BCD");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q3Selection != null) {
+                        frame.setSelected(q3Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q3.txt") {
                     // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected())) {
+                    if ("d".equals(getSelected()) && q3Selection == null) {
                         QuestionFrame.addToScore(1);
                     }
+                    // Save which radio button is selected
+                    q3Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("4. Which two are acceptable types for x? ",
                             "q4.txt", "A. 1 and 3", "B. 2 and 4", "C. 3 and 5", "D. 4 and 6");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q4Selection != null) {
+                        frame.setSelected(q4Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q4.txt") {
                     // Check if the answer is correct and update the score
-                    if ("a".equals(getSelected())) {
+                    if ("a".equals(getSelected()) && q4Selection == null) {
                         QuestionFrame.addToScore(1);
                     }
+                    // Save which radio button is selected
+                    q4Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("5.What will be the output of the program?",
                             "q5.txt", "A. 0 1 2 ", "B. 0 1 2 1 2 2", "C. 2 1 0 1 0 0", "D. 2 1 2 0 1 2");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q5Selection != null) {
+                        frame.setSelected(q5Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q5.txt") {
                     // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected())) {
+                    if ("d".equals(getSelected()) && q5Selection == null) {
                         QuestionFrame.addToScore(1);
                     }
+                    // Save which radio button is selected
+                    q5Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("6.What will be the output of the program?",
                             "q6.txt", "A. 0 def 1 ", "B. 2 1 0 def 1 ", "C. 2 1 0 def def ", "D. 2 1 0 def 1 def 1");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q6Selection != null) {
+                        frame.setSelected(q6Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q6.txt") {
                     // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected())) {
+                    if ("d".equals(getSelected()) && q6Selection == null) {
                         QuestionFrame.addToScore(1);
                     }
+                    // Save which radio button is selected
+                    q6Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("7.What will be the output of the program?",
                             "q7.txt", "A. abcXyZ ", "B. abcxyz ", "C. xyzabc ", "D. XyZabc");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q7Selection != null) {
+                        frame.setSelected(q7Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q7.txt") {
                     // Check if the answer is correct and update the score
-                    if ("c".equals(getSelected())) {
+                    if ("c".equals(getSelected()) && q7Selection == null) {
                         QuestionFrame.addToScore(1);
                     }
+                    // Save which radio button is selected
+                    q7Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("8.What will be the output of the program?",
                             "q8.txt", "A. Pine", "B. Tree", "C. Forest", "D. Oops");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q8Selection != null) {
+                        frame.setSelected(q8Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q8.txt") {
                     // Check if the answer is correct and update the score
-                    if ("a".equals(getSelected())) {
+                    if ("a".equals(getSelected()) && q8Selection == null) {
                         QuestionFrame.addToScore(2);
                     }
+                    // Save which radio button is selected
+                    q8Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("9.Which three statements are true?",
                             "q9.txt", "A. 1, 2 and 3 ", "B. 2, 4 and 5 ", "C. 3, 4 and 5 ", "D. 1, 4 and 5 ");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q9Selection != null) {
+                        frame.setSelected(q9Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q9.txt") {
                     // Check if the answer is correct and update the score
-                    if ("b".equals(getSelected())) {
+                    if ("b".equals(getSelected()) && q9Selection == null) {
                         QuestionFrame.addToScore(2);
                     }
+                    // Save which radio button is selected
+                    q9Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("10.Which two of the following methods are defined in class Thread?",
                             "q10.txt", "A. 1 and 4", "B. 2 and 3", "C. 3 and 4", "D. 2 and 4");
 
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q10Selection != null) {
+                        frame.setSelected(q10Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q10.txt") {
                     // Check if the answer is correct and update the score
-                    if ("a".equals(getSelected())) {
+                    if ("a".equals(getSelected()) && q10Selection == null) {
                         QuestionFrame.addToScore(2);
                     }
+                    // Save which radio button is selected
+                    q10Selection = getSelected();
+
                     QuestionFrame frame = new QuestionFrame("11.What will be the output of the program?",
                             "q11.txt", "A. 10", "B. None of the others", "C. Compilation fails due to error on line 2",
                             "D. 20");
@@ -229,6 +510,11 @@ public class QuestionFrame extends JFrame {
                     mainContainer.removeAll();
                     mainContainer.revalidate();
                     mainContainer.repaint();
+                    // Check if the answer for the nextquestion was already selected and if it 
+                    // was then select that button
+                    if (q11Selection != null) {
+                        frame.setSelected(q11Selection);
+                    }
 
                     mainContainer.add(frame.getQuestionPanel());
                     frame.nextQuestion.setText("Finish Test");
@@ -236,9 +522,12 @@ public class QuestionFrame extends JFrame {
                 } else if (fileName == "q11.txt") {
 
                     // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected())) {
+                    if ("d".equals(getSelected()) && q11Selection == null) {
                         QuestionFrame.addToScore(2);
                     }
+                    // No need to save the selected state because "next" button
+                    // will finish the test
+                    //q11Selection = getSelected();
 
                     // Empty string because theres no need for an extra message
                     // Create  the JOptionPane needed to show the score to the user
@@ -248,7 +537,6 @@ public class QuestionFrame extends JFrame {
                     mainContainer.revalidate();
                     mainContainer.repaint();
 
-                    //mainContainer.add(frame.getRestultsPanel());
                 }
 
             }
@@ -285,6 +573,19 @@ public class QuestionFrame extends JFrame {
             selected = "d";
         }
         return selected;
+
+    }
+
+    public void setSelected(String selection) {
+        if (selection == "a") {
+            answerOne.setSelected(true);
+        } else if (selection == "b") {
+            answerTwo.setSelected(true);
+        } else if (selection == "c") {
+            answerThree.setSelected(true);
+        } else if (selection == "d") {
+            answerFour.setSelected(true);
+        }
 
     }
 

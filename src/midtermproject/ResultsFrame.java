@@ -45,13 +45,15 @@ public class ResultsFrame extends JFrame {
         if (res == 0) {
             if (QuestionFrame.getScore() >= 8) {
                 UIManager.put("OptionPane.okButtonText", "Exit");
-                JOptionPane.showOptionDialog(null, "Congratulations " + WelcomeFrame.getName() + "!" + "\n" + "Your score is " + QuestionFrame.getScore() + " out of 15.",
+                JOptionPane.showOptionDialog(null, "Congratulations " + WelcomeFrame.getName() + "!" + "\n" +
+                        "Your score is " + QuestionFrame.getScore() + " out of 15.",
                         "Congratulations!", JOptionPane.DEFAULT_OPTION,
                         JOptionPane.INFORMATION_MESSAGE, null, null, null);
                 System.exit(0);
             } else {
                 UIManager.put("OptionPane.okButtonText", "Exit");
-                JOptionPane.showMessageDialog(null, WelcomeFrame.getName() + ", your score is " + QuestionFrame.getScore() + " out of 15.",
+                JOptionPane.showMessageDialog(null, WelcomeFrame.getName() + 
+                        ", your score is " + QuestionFrame.getScore() + " out of 15.",
                         "You failed the test!", JOptionPane.OK_OPTION);
                 System.exit(0);
             }
