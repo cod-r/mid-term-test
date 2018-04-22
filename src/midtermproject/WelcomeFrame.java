@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.text.*;
 import javax.swing.plaf.FontUIResource;
 
@@ -30,24 +32,38 @@ public class WelcomeFrame {
         mainContainer.setLayout(new GridBagLayout());
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
         // the contentPane is the container that holds all our components
-        //getContentPane().setLayout(new BorderLayout());
-        //getContentPane().add(mainContainer);
-
-        //mainContainer.setVisible(false);
+        
         //Create components
+        JPanel welcomeTextPanel = new JPanel();
+        welcomeTextPanel.setLayout(new BoxLayout(welcomeTextPanel, BoxLayout.Y_AXIS));
+        
         JLabel welcomeText = new JLabel();
         welcomeText.setFont(new Font("Seriff", Font.PLAIN, 30));
-        welcomeText.setText("This is a quizz that tests your java knowledge.");
-
+        welcomeText.setText("Welcome to the midterm test for Programming 2 class.");
+        
         JLabel welcomeText2 = new JLabel();
         welcomeText2.setFont(new Font("Seriff", Font.PLAIN, 30));
-        welcomeText2.setText("Please enter your name below and press the Start button.");
+        welcomeText2.setText("The test consists of 11 multiple choice questions.");
+        
+        JLabel welcomeText3 = new JLabel();
+        welcomeText3.setFont(new Font("Seriff", Font.PLAIN, 30));
+        welcomeText3.setText("You will have 2 minutes/question, in total 22 minutes.");
+       
+        JLabel welcomeText4 = new JLabel();
+        welcomeText4.setFont(new Font("Seriff", Font.PLAIN, 30));
+        welcomeText4.setText("Please enter your name below and press the Start button.");
+        
+        welcomeTextPanel.add(welcomeText);
+        welcomeTextPanel.add(welcomeText2);
+        welcomeTextPanel.add(welcomeText3);
+        welcomeTextPanel.add(welcomeText4);
+        welcomeTextPanel.setBorder(BorderFactory.createEtchedBorder());
 
         JLabel nameLabel = new JLabel();
         nameLabel.setText("Name: ");
         nameLabel.setFont(new Font("Seriff", Font.PLAIN, 30));
 
-        JTextField nameEnterField = new JTextField(10);
+        JTextField nameEnterField = new JTextField(15);
         nameEnterField.setFont(new Font("Seriff", Font.PLAIN, 30));
 
         startButton = new JButton("Start");
@@ -60,18 +76,11 @@ public class WelcomeFrame {
 
         gc.gridx = 0;
         gc.gridy = 0;
-        //mainContainer.add(timerPanel);
+        mainContainer.add(welcomeTextPanel, gc);
+
 
         gc.gridx = 0;
         gc.gridy = 1;
-        mainContainer.add(welcomeText, gc);
-
-        gc.gridx = 0;
-        gc.gridy = 2;
-        mainContainer.add(welcomeText2, gc);
-
-        gc.gridx = 0;
-        gc.gridy = 3;
 
         JPanel namePanel = new JPanel(new FlowLayout());
         namePanel.add(nameLabel);
@@ -79,7 +88,7 @@ public class WelcomeFrame {
         mainContainer.add(namePanel, gc);
 
         gc.gridx = 0;
-        gc.gridy = 4;
+        gc.gridy = 5;
 
         mainContainer.add(startButton, gc);
         

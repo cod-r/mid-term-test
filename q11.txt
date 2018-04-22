@@ -1,5 +1,4 @@
-public class Ex 
-{  
+public class Ex {  
 	int x = y;  
 	static int y = 5;  
 	public static void main(String[] args) 

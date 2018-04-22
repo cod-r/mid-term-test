@@ -24,6 +24,7 @@ public class QuestionFrame extends JFrame {
     
     private JPanel mainContainer;
     private JPanel changeQuestionPanel;
+    private JPanel buttonsPanel;
     private JButton nextQuestion;
     private JButton previousQuestion;
     private JRadioButton answerOne;
@@ -63,38 +64,55 @@ public class QuestionFrame extends JFrame {
         questionOne.setText(question);
         questionOne.setFont(font);
         questionOne.setAlignmentX(Component.CENTER_ALIGNMENT);
+       
         //questionOne.setHorizontalAlignment(SwingConstants.CENTER);
 
         // Create the text area where the question code will be placed
         // The code is read from a text file because
-        JTextArea code = new JTextArea();
+        JTextArea codeArea = new JTextArea();
         try {
             FileReader reader = new FileReader(fileName);
             BufferedReader br = new BufferedReader(reader);
-            code.read(br, null);
+            codeArea.read(br, null);
             br.close();
-            code.requestFocus();
+            codeArea.requestFocus();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        code.setEditable(false);
-        code.setTabSize(4);
-        code.setFont(new Font("Seriff", Font.PLAIN, 20));
+        codeArea.setEditable(false);
+        codeArea.setTabSize(4);
+        codeArea.setFont(new Font("Seriff", Font.PLAIN, 20));
+        codeArea.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // Create the radio buttons for the answers and add them in a ButtonGroup
+        // Create a panel to hold the buttons
+        buttonsPanel = new JPanel();
+        // Set the layout
+        buttonsPanel.setLayout(new BoxLayout(buttonsPanel, BoxLayout.Y_AXIS));
+        
         answerOne = new JRadioButton(a1);
         answerOne.setFont(font);
+        answerOne.setAlignmentX(Component.LEFT_ALIGNMENT);
         answerTwo = new JRadioButton(a2);
         answerTwo.setFont(font);
+        answerTwo.setAlignmentX(Component.LEFT_ALIGNMENT);
         answerThree = new JRadioButton(a3);
         answerThree.setFont(font);
+        answerThree.setAlignmentX(Component.LEFT_ALIGNMENT);
         answerFour = new JRadioButton(a4);
         answerFour.setFont(font);
+        answerFour.setAlignmentX(Component.LEFT_ALIGNMENT);
         ButtonGroup group = new ButtonGroup();
         group.add(answerOne);
         group.add(answerTwo);
         group.add(answerThree);
         group.add(answerFour);
+        buttonsPanel.add(answerOne);
+        buttonsPanel.add(answerTwo);
+        buttonsPanel.add(answerThree);
+        buttonsPanel.add(answerFour);
+        buttonsPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
 
         // Add buttons for next question and last question
         changeQuestionPanel = new JPanel(new FlowLayout());
@@ -104,6 +122,7 @@ public class QuestionFrame extends JFrame {
         previousQuestion.setFont(font);
         changeQuestionPanel.add(previousQuestion);
         changeQuestionPanel.add(nextQuestion);
+        changeQuestionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // When "back" button is pressed, create the apropirate QuestionFrame
         // depending on the current question frame
@@ -752,11 +771,8 @@ public class QuestionFrame extends JFrame {
         // Add components to the main panel
         mainContainer.add(testScore);
         mainContainer.add(questionOne);
-        mainContainer.add(code);
-        mainContainer.add(answerOne);
-        mainContainer.add(answerTwo);
-        mainContainer.add(answerThree);
-        mainContainer.add(answerFour);
+        mainContainer.add(codeArea);
+        mainContainer.add(buttonsPanel);
         mainContainer.add(changeQuestionPanel);
 
     }
