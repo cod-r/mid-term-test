@@ -28,10 +28,17 @@ public class ResultsFrame extends JFrame {
         // Change text size of JOptionPane
         UIManager.put("OptionPane.messageFont", new Font("Arial", Font.PLAIN, 30));
 
-        // Save the score into a file
+        // Save the score into a file with all the answers the user answered
         try {
             PrintWriter writer = new PrintWriter(WelcomeFrame.getName() + "_test_result.txt", "UTF-8");
-            writer.println("Score is " + QuestionFrame.getScore());
+            writer.println("Student Name: " + WelcomeFrame.getName());
+            writer.println("Score: " + QuestionFrame.getScore() + "\n");
+            writer.println("Answers: ");
+            
+            for (int i = 1; i <= 11; i++){
+                String index = "q" + String.valueOf(i);
+                writer.println("Question " + i + ": " + QuestionFrame.getAnswer(index));
+            }
             writer.close();
         } catch (IOException ex) {
             //Error
@@ -42,7 +49,7 @@ public class ResultsFrame extends JFrame {
         int res = JOptionPane.showOptionDialog(null, extraMessage + " Click \"OK\" to see your result.",
                 "Info", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE, null, null, null);
-        if (res == 0) {
+        if (res == 0 || res == -1) {
             if (QuestionFrame.getScore() >= 8) {
                 UIManager.put("OptionPane.okButtonText", "Exit");
                 JOptionPane.showOptionDialog(null, "Congratulations " + WelcomeFrame.getName() + "!" + "\n" +

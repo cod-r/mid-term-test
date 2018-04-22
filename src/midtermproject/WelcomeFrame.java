@@ -86,11 +86,13 @@ public class WelcomeFrame {
         // When the user clicks the "START" button: check if the name is entered,
         // create the frame for the first question and start the timer
         startButton.addActionListener(new ActionListener() {
+            
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Save user's name into a variable
                 name = nameEnterField.getText();
+                // Check if the user didn't enter his name
                 if ("".equals(name)) {
-
                     // Change the button size of JOptionPane
                     UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("ARIAL", Font.PLAIN, 25)));
                     // Change text size of JOptionPane

@@ -19,10 +19,9 @@ import java.text.*;
  */
 public class QuestionFrame extends JFrame {
 
-    // Used for preventing the score to go up multiple times
-    private int counter = 0;
     // Keeps the score
     private static int score = 0;
+    
     private JPanel mainContainer;
     private JPanel changeQuestionPanel;
     private JButton nextQuestion;
@@ -47,6 +46,7 @@ public class QuestionFrame extends JFrame {
     private static String q9Selection = null;
     private static String q10Selection = null;
     private static String q11Selection = null;
+    
 
     QuestionFrame(String question, String fileName, String a1, String a2, String a3, String a4) {
 
@@ -116,18 +116,17 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q2Selection != "c") {
                         // Check if the correct radio button is selected
-                        if ("c".equals(getSelected())){
+                        if ("c".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q2Selection == "c") {
-                        if(getSelected() != "c"){
+                        if (getSelected() != "c") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
                     // Used in case the user goes to the next question without ansering the current question and returns back
                     q2Selection = getSelected();
-                    
 
                     QuestionFrame frame = new QuestionFrame("1.What will be the output of the program?",
                             "q1.txt", "A. Base", "B. BaseBase", "C. Compilation fails", "D. The code runs with no output ");
@@ -150,18 +149,17 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q3Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q3Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
                     // Used in case the user goes to the next question without ansering the current question and returns back
                     q3Selection = getSelected();
-                    
 
                     QuestionFrame frame = new QuestionFrame("2.What will be the output of the program?",
                             "q2.txt", "A. ABCD", "B. Compilation fails.", "C. C is printed before exiting with an error message.",
@@ -183,12 +181,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q4Selection != "a") {
                         // Check if the correct radio button is selected
-                        if ("a".equals(getSelected())){
+                        if ("a".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q4Selection == "a") {
-                        if(getSelected() != "a"){
+                        if (getSelected() != "a") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -212,12 +210,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q5Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q5Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -238,19 +236,19 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q6.txt") {
-                   // Check if the correct radio button wasnt checked before
+                    // Check if the correct radio button wasnt checked before
                     if (q6Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q6Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
-                     // Used in case the user goes to the next question without ansering the current question and returns back
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q6Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("5.What will be the output of the program?",
@@ -270,12 +268,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q7Selection != "c") {
                         // Check if the correct radio button is selected
-                        if ("c".equals(getSelected())){
+                        if ("c".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q7Selection == "c") {
-                        if(getSelected() != "c"){
+                        if (getSelected() != "c") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -299,12 +297,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q8Selection != "a") {
                         // Check if the correct radio button is selected
-                        if ("a".equals(getSelected())){
+                        if ("a".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q8Selection == "a") {
-                        if(getSelected() != "a"){
+                        if (getSelected() != "a") {
                             QuestionFrame.addToScore(-2);
                         }
                     }
@@ -328,12 +326,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q9Selection != "b") {
                         // Check if the correct radio button is selected
-                        if ("b".equals(getSelected())){
+                        if ("b".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q9Selection == "b") {
-                        if(getSelected() != "b"){
+                        if (getSelected() != "b") {
                             QuestionFrame.addToScore(-2);
                         }
                     }
@@ -357,12 +355,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q10Selection != "a") {
                         // Check if the correct radio button is selected
-                        if ("a".equals(getSelected())){
+                        if ("a".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q10Selection == "a") {
-                        if(getSelected() != "a"){
+                        if (getSelected() != "a") {
                             QuestionFrame.addToScore(-2);
                         }
                     }
@@ -386,19 +384,19 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q11Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q11Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-2);
                         }
                     }
-                    
+
                     // Used in case the user goes to the next question without ansering the current question and returns back
                     q11Selection = getSelected();
-                    
+
                     QuestionFrame frame = new QuestionFrame("10.Which two of the following methods are defined in class Thread?",
                             "q10.txt", "A. 1 and 4", "B. 2 and 3", "C. 3 and 4", "D. 2 and 4");
 
@@ -428,12 +426,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q1Selection != "b") {
                         // Check if the correct radio button is selected
-                        if ("b".equals(getSelected())){
+                        if ("b".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q1Selection == "b") {
-                        if(getSelected() != "b"){
+                        if (getSelected() != "b") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -461,12 +459,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q2Selection != "c") {
                         // Check if the correct radio button is selected
-                        if ("c".equals(getSelected())){
+                        if ("c".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q2Selection == "c") {
-                        if(getSelected() != "c"){
+                        if (getSelected() != "c") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -490,12 +488,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q3Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q3Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -519,12 +517,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q4Selection != "a") {
                         // Check if the correct radio button is selected
-                        if ("a".equals(getSelected())){
+                        if ("a".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q4Selection == "a") {
-                        if(getSelected() != "a"){
+                        if (getSelected() != "a") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -548,12 +546,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q5Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q5Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -577,12 +575,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q6Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q6Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -606,12 +604,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q7Selection != "c") {
                         // Check if the correct radio button is selected
-                        if ("c".equals(getSelected())){
+                        if ("c".equals(getSelected())) {
                             QuestionFrame.addToScore(1);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q7Selection == "c") {
-                        if(getSelected() != "c"){
+                        if (getSelected() != "c") {
                             QuestionFrame.addToScore(-1);
                         }
                     }
@@ -635,12 +633,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q8Selection != "a") {
                         // Check if the correct radio button is selected
-                        if ("a".equals(getSelected())){
+                        if ("a".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q8Selection == "a") {
-                        if(getSelected() != "a"){
+                        if (getSelected() != "a") {
                             QuestionFrame.addToScore(-2);
                         }
                     }                    // Save which radio button is selected
@@ -663,12 +661,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q9Selection != "b") {
                         // Check if the correct radio button is selected
-                        if ("b".equals(getSelected())){
+                        if ("b".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q9Selection == "b") {
-                        if(getSelected() != "b"){
+                        if (getSelected() != "b") {
                             QuestionFrame.addToScore(-2);
                         }
                     }
@@ -692,12 +690,12 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q10Selection != "a") {
                         // Check if the correct radio button is selected
-                        if ("a".equals(getSelected())){
+                        if ("a".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q10Selection == "a") {
-                        if(getSelected() != "a"){
+                        if (getSelected() != "a") {
                             QuestionFrame.addToScore(-2);
                         }
                     }
@@ -724,18 +722,18 @@ public class QuestionFrame extends JFrame {
                     // Check if the correct radio button wasnt checked before
                     if (q11Selection != "d") {
                         // Check if the correct radio button is selected
-                        if ("d".equals(getSelected())){
+                        if ("d".equals(getSelected())) {
                             QuestionFrame.addToScore(2);
                         }
-                    // Check if the answer was modified from correct to wrong and substract the score
+                        // Check if the answer was modified from correct to wrong and substract the score
                     } else if (q11Selection == "d") {
-                        if(getSelected() != "d"){
+                        if (getSelected() != "d") {
                             QuestionFrame.addToScore(-2);
                         }
                     }
-                    // No need to save the selected state because "next" button
-                    // will finish the test
-                    //q11Selection = getSelected();
+                    
+                    
+                    q11Selection = getSelected();
 
                     // Empty string because theres no need for an extra message
                     // Create  the JOptionPane needed to show the score to the user
@@ -806,6 +804,34 @@ public class QuestionFrame extends JFrame {
     public static void addToScore(int addedScore) {
         score = score + addedScore;
     }
-    
+
+    // Get the answers
+    public static String getAnswer(String question) {
+        if (question.equals("q1")) {
+            return q1Selection;
+        } else if ("q2".equals(question)) {
+            return q2Selection;
+        } else if ("q3".equals(question)) {
+            return q3Selection;
+        } else if ("q4".equals(question)) {
+            return q4Selection;
+        } else if ("q5".equals(question)) {
+            return q5Selection;
+        } else if ("q6".equals(question)) {
+            return q6Selection;
+        } else if ("q7".equals(question)) {
+            return q7Selection;
+        } else if ("q8".equals(question)) {
+            return q8Selection;
+        } else if ("q9".equals(question)) {
+            return q9Selection;
+        } else if ("q10".equals(question)) {
+            return q10Selection;
+        } else if ("q11".equals(question)) {
+            return q11Selection;
+        } else {
+            return "No answer";
+        }
+    }
 
 }
