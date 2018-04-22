@@ -113,8 +113,21 @@ public class QuestionFrame extends JFrame {
                 // Create the next question depending on the current question "q1.txt"
 
                 if (fileName == "q2.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q2Selection != "c") {
+                        // Check if the correct radio button is selected
+                        if ("c".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q2Selection == "c") {
+                        if(getSelected() != "c"){
+                            QuestionFrame.addToScore(-1);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q2Selection = getSelected();
+                    
 
                     QuestionFrame frame = new QuestionFrame("1.What will be the output of the program?",
                             "q1.txt", "A. Base", "B. BaseBase", "C. Compilation fails", "D. The code runs with no output ");
@@ -134,8 +147,21 @@ public class QuestionFrame extends JFrame {
                     mainContainer.add(frame.getQuestionPanel());
 
                 } else if (fileName == "q3.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q3Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q3Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-1);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q3Selection = getSelected();
+                    
 
                     QuestionFrame frame = new QuestionFrame("2.What will be the output of the program?",
                             "q2.txt", "A. ABCD", "B. Compilation fails.", "C. C is printed before exiting with an error message.",
@@ -154,7 +180,19 @@ public class QuestionFrame extends JFrame {
                     mainContainer.add(frame.getQuestionPanel());
 
                 } else if (fileName == "q4.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q4Selection != "a") {
+                        // Check if the correct radio button is selected
+                        if ("a".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q4Selection == "a") {
+                        if(getSelected() != "a"){
+                            QuestionFrame.addToScore(-1);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q4Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("3.What will be the output of the program?",
@@ -171,7 +209,19 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q5.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q5Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q5Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-1);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q5Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("4. Which two are acceptable types for x? ",
@@ -188,7 +238,19 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q6.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                   // Check if the correct radio button wasnt checked before
+                    if (q6Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q6Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-1);
+                        }
+                    }
+                     // Used in case the user goes to the next question without ansering the current question and returns back
                     q6Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("5.What will be the output of the program?",
@@ -205,7 +267,19 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q7.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q7Selection != "c") {
+                        // Check if the correct radio button is selected
+                        if ("c".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q7Selection == "c") {
+                        if(getSelected() != "c"){
+                            QuestionFrame.addToScore(-1);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q7Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("6.What will be the output of the program?",
@@ -222,7 +296,19 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q8.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q8Selection != "a") {
+                        // Check if the correct radio button is selected
+                        if ("a".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q8Selection == "a") {
+                        if(getSelected() != "a"){
+                            QuestionFrame.addToScore(-2);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q8Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("7.What will be the output of the program?",
@@ -239,7 +325,19 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q9.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q9Selection != "b") {
+                        // Check if the correct radio button is selected
+                        if ("b".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q9Selection == "b") {
+                        if(getSelected() != "b"){
+                            QuestionFrame.addToScore(-2);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q9Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("8.What will be the output of the program?",
@@ -256,7 +354,19 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q10.txt") {
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q10Selection != "a") {
+                        // Check if the correct radio button is selected
+                        if ("a".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q10Selection == "a") {
+                        if(getSelected() != "a"){
+                            QuestionFrame.addToScore(-2);
+                        }
+                    }
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q10Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("9.Which three statements are true?",
@@ -273,9 +383,22 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q11.txt") {
-
-                    // Used in case the user goes to the next question without ansering the current question
+                    // Check if the correct radio button wasnt checked before
+                    if (q11Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q11Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-2);
+                        }
+                    }
+                    
+                    // Used in case the user goes to the next question without ansering the current question and returns back
                     q11Selection = getSelected();
+                    
                     QuestionFrame frame = new QuestionFrame("10.Which two of the following methods are defined in class Thread?",
                             "q10.txt", "A. 1 and 4", "B. 2 and 3", "C. 3 and 4", "D. 2 and 4");
 
@@ -302,9 +425,17 @@ public class QuestionFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Create the next question depending on the current question "q1.txt"
                 if (fileName == "q1.txt") {
-                    // Check if the answer is correct and if the question was already answered then update the score
-                    if ("b".equals(getSelected()) && q1Selection == null) {
-                        QuestionFrame.addToScore(1);
+                    // Check if the correct radio button wasnt checked before
+                    if (q1Selection != "b") {
+                        // Check if the correct radio button is selected
+                        if ("b".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q1Selection == "b") {
+                        if(getSelected() != "b"){
+                            QuestionFrame.addToScore(-1);
+                        }
                     }
                     // Save which radio button is selected
                     q1Selection = getSelected();
@@ -327,10 +458,17 @@ public class QuestionFrame extends JFrame {
                     //pack();
 
                 } else if (fileName == "q2.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("c".equals(getSelected()) && q2Selection == null) {
-                        QuestionFrame.addToScore(1);
-
+                    // Check if the correct radio button wasnt checked before
+                    if (q2Selection != "c") {
+                        // Check if the correct radio button is selected
+                        if ("c".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q2Selection == "c") {
+                        if(getSelected() != "c"){
+                            QuestionFrame.addToScore(-1);
+                        }
                     }
                     // Save which radio button is selected
                     q2Selection = getSelected();
@@ -349,9 +487,17 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q3.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected()) && q3Selection == null) {
-                        QuestionFrame.addToScore(1);
+                    // Check if the correct radio button wasnt checked before
+                    if (q3Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q3Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-1);
+                        }
                     }
                     // Save which radio button is selected
                     q3Selection = getSelected();
@@ -370,9 +516,17 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q4.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("a".equals(getSelected()) && q4Selection == null) {
-                        QuestionFrame.addToScore(1);
+                    // Check if the correct radio button wasnt checked before
+                    if (q4Selection != "a") {
+                        // Check if the correct radio button is selected
+                        if ("a".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q4Selection == "a") {
+                        if(getSelected() != "a"){
+                            QuestionFrame.addToScore(-1);
+                        }
                     }
                     // Save which radio button is selected
                     q4Selection = getSelected();
@@ -391,9 +545,17 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q5.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected()) && q5Selection == null) {
-                        QuestionFrame.addToScore(1);
+                    // Check if the correct radio button wasnt checked before
+                    if (q5Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q5Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-1);
+                        }
                     }
                     // Save which radio button is selected
                     q5Selection = getSelected();
@@ -412,9 +574,17 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q6.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected()) && q6Selection == null) {
-                        QuestionFrame.addToScore(1);
+                    // Check if the correct radio button wasnt checked before
+                    if (q6Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q6Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-1);
+                        }
                     }
                     // Save which radio button is selected
                     q6Selection = getSelected();
@@ -433,9 +603,17 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q7.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("c".equals(getSelected()) && q7Selection == null) {
-                        QuestionFrame.addToScore(1);
+                    // Check if the correct radio button wasnt checked before
+                    if (q7Selection != "c") {
+                        // Check if the correct radio button is selected
+                        if ("c".equals(getSelected())){
+                            QuestionFrame.addToScore(1);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q7Selection == "c") {
+                        if(getSelected() != "c"){
+                            QuestionFrame.addToScore(-1);
+                        }
                     }
                     // Save which radio button is selected
                     q7Selection = getSelected();
@@ -454,11 +632,18 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q8.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("a".equals(getSelected()) && q8Selection == null) {
-                        QuestionFrame.addToScore(2);
-                    }
-                    // Save which radio button is selected
+                    // Check if the correct radio button wasnt checked before
+                    if (q8Selection != "a") {
+                        // Check if the correct radio button is selected
+                        if ("a".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q8Selection == "a") {
+                        if(getSelected() != "a"){
+                            QuestionFrame.addToScore(-2);
+                        }
+                    }                    // Save which radio button is selected
                     q8Selection = getSelected();
 
                     QuestionFrame frame = new QuestionFrame("9.Which three statements are true?",
@@ -475,9 +660,17 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q9.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("b".equals(getSelected()) && q9Selection == null) {
-                        QuestionFrame.addToScore(2);
+                    // Check if the correct radio button wasnt checked before
+                    if (q9Selection != "b") {
+                        // Check if the correct radio button is selected
+                        if ("b".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q9Selection == "b") {
+                        if(getSelected() != "b"){
+                            QuestionFrame.addToScore(-2);
+                        }
                     }
                     // Save which radio button is selected
                     q9Selection = getSelected();
@@ -496,9 +689,17 @@ public class QuestionFrame extends JFrame {
 
                     mainContainer.add(frame.getQuestionPanel());
                 } else if (fileName == "q10.txt") {
-                    // Check if the answer is correct and update the score
-                    if ("a".equals(getSelected()) && q10Selection == null) {
-                        QuestionFrame.addToScore(2);
+                    // Check if the correct radio button wasnt checked before
+                    if (q10Selection != "a") {
+                        // Check if the correct radio button is selected
+                        if ("a".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q10Selection == "a") {
+                        if(getSelected() != "a"){
+                            QuestionFrame.addToScore(-2);
+                        }
                     }
                     // Save which radio button is selected
                     q10Selection = getSelected();
@@ -520,10 +721,17 @@ public class QuestionFrame extends JFrame {
                     frame.nextQuestion.setText("Finish Test");
 
                 } else if (fileName == "q11.txt") {
-
-                    // Check if the answer is correct and update the score
-                    if ("d".equals(getSelected()) && q11Selection == null) {
-                        QuestionFrame.addToScore(2);
+                    // Check if the correct radio button wasnt checked before
+                    if (q11Selection != "d") {
+                        // Check if the correct radio button is selected
+                        if ("d".equals(getSelected())){
+                            QuestionFrame.addToScore(2);
+                        }
+                    // Check if the answer was modified from correct to wrong and substract the score
+                    } else if (q11Selection == "d") {
+                        if(getSelected() != "d"){
+                            QuestionFrame.addToScore(-2);
+                        }
                     }
                     // No need to save the selected state because "next" button
                     // will finish the test
@@ -562,7 +770,7 @@ public class QuestionFrame extends JFrame {
     }
 
     public String getSelected() {
-        String selected = "x";
+        String selected = null;
         if (answerOne.isSelected()) {
             selected = "a";
         } else if (answerTwo.isSelected()) {
@@ -598,5 +806,6 @@ public class QuestionFrame extends JFrame {
     public static void addToScore(int addedScore) {
         score = score + addedScore;
     }
+    
 
 }
