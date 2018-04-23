@@ -11,7 +11,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.text.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -21,7 +23,7 @@ public class QuestionFrame extends JFrame {
 
     // Keeps the score
     private static int score = 0;
-    
+
     private JPanel mainContainer;
     private JPanel changeQuestionPanel;
     private JPanel buttonsPanel;
@@ -47,8 +49,16 @@ public class QuestionFrame extends JFrame {
     private static String q9Selection = null;
     private static String q10Selection = null;
     private static String q11Selection = null;
-    
 
+    /**
+     * Constructor takes 6 arguments
+     * @param question is the question the user must answer
+     * @param fileName is the code that will be shown to the user
+     * @param a1 fist answer option
+     * @param a2 second answer option
+     * @param a3 third answer option
+     * @param a4 fourth answer option
+     */
     QuestionFrame(String question, String fileName, String a1, String a2, String a3, String a4) {
 
         // Set Layout manager
@@ -57,16 +67,14 @@ public class QuestionFrame extends JFrame {
         setContentPane(mainContainer);
 
         // Create components
-        testScore = new JLabel();
-        testScore.setText("score is " + QuestionFrame.getScore());
+        
         // Create question label
         JLabel questionOne = new JLabel();
         questionOne.setText(question);
         questionOne.setFont(font);
         questionOne.setAlignmentX(Component.CENTER_ALIGNMENT);
-       
-        //questionOne.setHorizontalAlignment(SwingConstants.CENTER);
 
+        //questionOne.setHorizontalAlignment(SwingConstants.CENTER);
         // Create the text area where the question code will be placed
         // The code is read from a text file because
         JTextArea codeArea = new JTextArea();
@@ -83,13 +91,16 @@ public class QuestionFrame extends JFrame {
         codeArea.setTabSize(4);
         codeArea.setFont(new Font("Seriff", Font.PLAIN, 20));
         codeArea.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Border border = codeArea.getBorder();
+        Border margin = new EmptyBorder(10, 10, 10, 10);
+        codeArea.setBorder(new CompoundBorder(border, margin));
 
         // Create the radio buttons for the answers and add them in a ButtonGroup
         // Create a panel to hold the buttons
         buttonsPanel = new JPanel();
         // Set the layout
         buttonsPanel.setLayout(new BoxLayout(buttonsPanel, BoxLayout.Y_AXIS));
-        
+
         answerOne = new JRadioButton(a1);
         answerOne.setFont(font);
         answerOne.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -112,7 +123,6 @@ public class QuestionFrame extends JFrame {
         buttonsPanel.add(answerThree);
         buttonsPanel.add(answerFour);
         buttonsPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        
 
         // Add buttons for next question and last question
         changeQuestionPanel = new JPanel(new FlowLayout());
@@ -750,8 +760,7 @@ public class QuestionFrame extends JFrame {
                             QuestionFrame.addToScore(-2);
                         }
                     }
-                    
-                    
+
                     q11Selection = getSelected();
 
                     // Empty string because theres no need for an extra message

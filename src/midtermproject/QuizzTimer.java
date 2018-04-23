@@ -12,20 +12,13 @@ package midtermproject;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.Timer;
-import javax.swing.UIManager;
-import javax.swing.plaf.FontUIResource;
 
 public class QuizzTimer {
 
-    private double time = 1.2*Math.pow(10,6);
-    //private double time = 0.03 * Math.pow(10, 6);
+    private double time = 1.32*Math.pow(10,6);
     private SimpleDateFormat setTime = new SimpleDateFormat("mm:ss");
     private JLabel timeLabel;
     private Timer countDown;

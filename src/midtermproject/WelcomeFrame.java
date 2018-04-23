@@ -9,9 +9,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.text.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
 import javax.swing.plaf.FontUIResource;
 
 /**
@@ -57,7 +58,11 @@ public class WelcomeFrame {
         welcomeTextPanel.add(welcomeText2);
         welcomeTextPanel.add(welcomeText3);
         welcomeTextPanel.add(welcomeText4);
-        welcomeTextPanel.setBorder(BorderFactory.createEtchedBorder());
+        //welcomeTextPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        welcomeTextPanel.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
+        Border border = welcomeTextPanel.getBorder();
+        Border margin = new EmptyBorder(10,10,10,10);
+        welcomeTextPanel.setBorder(new CompoundBorder(border, margin));
 
         JLabel nameLabel = new JLabel();
         nameLabel.setText("Name: ");

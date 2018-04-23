@@ -1,7 +1,0 @@
-
-Welcome to the midterm test for Programming 2 class.
-
-The test consists of 11 multiple choice questions.
-You will have 2 minutes/question, in total 22 minutes.
-
-Please enter your name below and pres the "START" button.

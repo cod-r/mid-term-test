@@ -8,10 +8,11 @@ public class Switch2
 		{             
 			switch (z)              
 			{                 
-				case x: System.out.print("0 ");                 
-				default: System.out.print("def ");                 
-				case x-1: System.out.print("1 ");                               break;                 
-				case x-2: System.out.print("2 ");             
+				case x: System.out.print("0");       		
+				default: System.out.print("def");      		
+				case x-1: System.out.print("1");     		
+				break;                              		
+				case x-2: System.out.print("2");		        
 			}         
 		}     
 	} 

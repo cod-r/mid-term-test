@@ -7,7 +7,6 @@ package midtermproject;
 
 import javax.swing.*;
 import java.awt.*;
-import java.text.*;
 
 /**
  *
@@ -23,7 +22,6 @@ public class MasterFrame extends JFrame {
 
         // Define and Set Layout manager
         JPanel masterPanel = new JPanel(new BorderLayout());
-        //mainContainer.setLayout(new GridBagLayout());
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         // the contentPane is the container that holds all our components
         getContentPane().setLayout(new GridLayout());
@@ -42,7 +40,7 @@ public class MasterFrame extends JFrame {
         titleTimer.setText("Time Left: ");
         stillTimer = new JLabel();
         stillTimer.setFont(new Font("Dialog", Font.PLAIN + Font.BOLD, 24));
-        stillTimer.setText("20:00");
+        stillTimer.setText("22:00");
         timerPanel.add(titleTimer);
         timerPanel.add(stillTimer);
 

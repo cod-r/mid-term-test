@@ -40,8 +40,8 @@ public class ResultsFrame extends JFrame {
                 writer.println("Question " + i + ": " + QuestionFrame.getAnswer(index));
             }
             writer.close();
-        } catch (IOException ex) {
-            //Error
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, e);
         }
 
         // Using a showOptionDialog to find out when the "ok" button is clicked
