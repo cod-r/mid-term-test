@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package midtermproject;
 
 import javax.swing.*;
@@ -16,7 +12,8 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
 /**
- *
+ *  Creates the appropriate question depending on the current one and updates the
+ * score accordingly
  * @author panea
  */
 public class QuestionFrame extends JFrame {
@@ -778,7 +775,6 @@ public class QuestionFrame extends JFrame {
         });
 
         // Add components to the main panel
-        mainContainer.add(testScore);
         mainContainer.add(questionOne);
         mainContainer.add(codeArea);
         mainContainer.add(buttonsPanel);

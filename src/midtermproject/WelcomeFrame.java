@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package midtermproject;
 
 import javax.swing.*;
@@ -16,7 +12,8 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.plaf.FontUIResource;
 
 /**
- *
+ *  This frame contains the welcome text with the rules for the test, an input
+ * field where the user needs to enter his name and the button to start the test
  * @author panea
  */
 public class WelcomeFrame {
@@ -31,7 +28,6 @@ public class WelcomeFrame {
         // Define and Set Layout manager
         mainContainer = new JPanel();
         mainContainer.setLayout(new GridBagLayout());
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         // the contentPane is the container that holds all our components
         
         //Create components
@@ -58,7 +54,6 @@ public class WelcomeFrame {
         welcomeTextPanel.add(welcomeText2);
         welcomeTextPanel.add(welcomeText3);
         welcomeTextPanel.add(welcomeText4);
-        //welcomeTextPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         welcomeTextPanel.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
         Border border = welcomeTextPanel.getBorder();
         Border margin = new EmptyBorder(10,10,10,10);
@@ -77,7 +72,7 @@ public class WelcomeFrame {
         GridBagConstraints gc = new GridBagConstraints();
 
         gc.weightx = 0.5;
-        //gc.weighty = 0.5;
+        //gc.weighty 
 
         gc.gridx = 0;
         gc.gridy = 0;
@@ -117,7 +112,7 @@ public class WelcomeFrame {
                 } else {
                     //Remove the fixed time from the MasterFrame so we can add the real timer
                     MasterFrame.timerPanel.remove(MasterFrame.stillTimer);
-                    QuizzTimer timer = new QuizzTimer();
+                    TestTimer timer = new TestTimer();
                     timer.start();
                     // Add the timer to the MasterFrame
                     MasterFrame.timerPanel.add(timer.getTimeLabel());

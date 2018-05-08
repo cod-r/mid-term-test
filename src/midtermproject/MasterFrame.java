@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package midtermproject;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- *
+ *  This is the master frame which holds the WelcomeFrame and the Timer.
  * @author panea
  */
 public class MasterFrame extends JFrame {

@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package midtermproject;
 
 /**
- *
+ *  Handles the timer
  * @author panea
  */
 import java.awt.Font;
@@ -16,7 +12,7 @@ import java.text.SimpleDateFormat;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-public class QuizzTimer {
+public class TestTimer {
 
     private double time = 1.32*Math.pow(10,6);
     private SimpleDateFormat setTime = new SimpleDateFormat("mm:ss");
@@ -24,7 +20,7 @@ public class QuizzTimer {
     private Timer countDown;
     private Font font = new Font("Arial", Font.PLAIN, 30);
 
-    public QuizzTimer() {
+    public TestTimer() {
 
         countDown = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {

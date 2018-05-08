@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package midtermproject;
 
 import javax.swing.JFrame;
@@ -16,7 +12,6 @@ import javax.swing.plaf.FontUIResource;
 /**
  * This class creates the JOptionPane needed to show the score to the user and
  * saves the score to a file
- *
  * @author panea
  */
 public class ResultsFrame extends JFrame {
